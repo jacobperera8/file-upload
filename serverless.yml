@@ -12,4 +12,4 @@ functions:
       - httpApi: '*'
       - s3:
           bucket: html-corrector-bucket-1
-          event: s3:ObjectCreated:*
+          event: s3:ObjectCreated:*"
