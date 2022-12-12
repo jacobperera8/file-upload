@@ -6,10 +6,12 @@ provider:
   runtime: nodejs14.x
 
 functions:
-  api:
+  handler:
     handler: handler.handler
     events:
-      - httpApi: '*'
+      #- httpApi: '*'
+      - http: ANY /{proxy+}
+      - http: ANY /
       - s3:
           bucket: html-corrector-bucket-devy
           event: s3:ObjectCreated:*"
