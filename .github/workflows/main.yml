@@ -1,4 +1,4 @@
-name: deploy to lambda
+name: deploy lambda
 on:
   # Trigger the workflow on push or pull request,
   # but only for the main branch
@@ -6,7 +6,7 @@ on:
     branches:
       - main
 jobs:
-  deploy_source:
+  deploy:
     name: deploy lambda from source
     runs-on: ubuntu-latest
     strategy:
@@ -21,7 +21,7 @@ jobs:
             node-version: ${{ matrix.node-version }}
       - run: npm ci
       - name: serverless deploy
-        uses: appleboy/lambda-action@master
+        uses: serverless/lambda-action@master
         with:
           args: deploy
         env:
