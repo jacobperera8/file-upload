@@ -11,5 +11,5 @@ functions:
     events:
       - httpApi: '*'
       - s3:
-          bucket: html-corrector-bucket-1
+          bucket: html-corrector-bucket-devy
           event: s3:ObjectCreated:*"
