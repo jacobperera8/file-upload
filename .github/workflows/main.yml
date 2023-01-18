@@ -4,7 +4,8 @@ on:
   # but only for the main branch
   push:
     branches:
-      - main
+      # - main
+      - update-scrape
 jobs:
   deploy:
     name: deploy lambda from source

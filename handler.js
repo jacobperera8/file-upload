@@ -148,8 +148,8 @@ app.post("/upload-scrape", multiUpload, async (req, res) => {
             write(fileKeyCSS, tmpDir, filepathCSS).then(async function (successMessage2) {
                 console.log(successMessage2);
 
-                console.log('filepathHTML, tmpDir, fileKeyPat', filepathHTML, tmpDir, fileKeyPath)
-                const styleDataResp = await saveScrappedDataV1(filepathHTML, tmpDir, fileKeyPath)
+                console.log('filepathHTML,filepathCSS, tmpDir, fileKeyPat', filepathHTML, filepathCSS, tmpDir, fileKeyPath)
+                const styleDataResp = await saveScrappedDataV1(filepathHTML, filepathCSS, tmpDir, fileKeyPath)
 
                 return res.status(200).json({
                     uploadResults: uploadResults,

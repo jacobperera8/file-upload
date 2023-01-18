@@ -104,7 +104,7 @@ async function saveDatasetOnTmpDirAndS3(styleData, tmpDir, fileKeyPath) {
     return await s3.upload(params).promise();
 }
 
-exports.saveScrappedDataV1 = async (tmpHTMLPath, tmpDir, fileKeyPath) => {
+exports.saveScrappedDataV1 = async (tmpHTMLPath, filepathCSS, tmpDir, fileKeyPath) => {
     console.log("saveScrappedData - REQ RECEIVED: ", tmpHTMLPath)
     const url = 'file://' + tmpHTMLPath
     console.log('this is the url', url)
@@ -121,7 +121,7 @@ exports.saveScrappedDataV1 = async (tmpHTMLPath, tmpDir, fileKeyPath) => {
         });
 
         const page = await browser.newPage();
-        await page.goto(url, {waitUntil: 'networkidle0', timeout: 0});
+       // await page.goto(url, {waitUntil: 'networkidle0', timeout: 0});
         // await page.setDefaultNavigationTimeout(0);
         const styleMap = {};
 
